@@ -50,7 +50,13 @@ and run `bundle exec ruby my_configuration_server.rb`
 
 You can now query the server:
 
+1. In the first example we get the production db host for the api service
+2. In the second example we ask for a non existing key and get a 404 response
+3. In the third example we ask for a key which has a hash value. We get a JSON
+   representation of it.
 
+![Usage Examples]
+(https://raw.githubusercontent.com/nanit/config-server/master/doc/usage.png)
 
 ## Development
 
