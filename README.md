@@ -2,24 +2,8 @@
 
 The simplest way to store YAML configuration and serve it over HTTP
 
-## Installation
+## Example config.yml
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'config_server'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install config_server
-
-## Usage
-To run the server you must have a configuration file first:
 ```yaml
 #config.yml
 
@@ -37,6 +21,36 @@ staging:
   nginx:
     server_name: www.me.staging
 ```
+
+You have two options for running the server:
+
+## Option 1: Running With Docker
+
+ConfigServer has a docker image on Docker Hub. To use it create a config.yml
+file and mount it into the container:
+
+    $ docker run -d -p 8080:8080 -v /path/to/your/config.yml:/usr/src/app/config.yml nanit/config_server
+
+## Option 2: Running Your Ruby Script
+
+### 1. Install config_server Gem
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'config_server'
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install config_server
+
+### 2. Run Your Ruby Script
+
 Then create the following ruby file:
 ```ruby
 #my_configuration_server.rb
@@ -46,12 +60,15 @@ require 'config_server'
 ConfigServer.start("config.yml")
 ```
 
-and run `bundle exec ruby my_configuration_server.rb`
+Then run 
+    $ bundle exec ruby my_configuration_server.rb
+
+## Querying The Server
 
 To get a value just chain the key path as your HTTP request path:
 `GET /production/nginx/server_name` to get the corresponding keys.
 
-## Some More Examples
+Some examples:
 
 1. In the first example we get the production db host for the api service
 2. In the second example we ask for a non existing key and get a 404 response
