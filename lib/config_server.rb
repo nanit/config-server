@@ -5,6 +5,6 @@ require "rack/server"
 
 module ConfigServer
   def self.start(config_file)
-    Rack::Server.start(app: ConfigServer::App.new(config_file))
+    Rack::Server.start(:Host => "0.0.0.0", app: ConfigServer::App.new(config_file))
   end
 end

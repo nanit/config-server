@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    config_server (0.1.0)
+      rack
+    rack (1.6.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  config_server
+
+BUNDLED WITH
+   1.10.6
