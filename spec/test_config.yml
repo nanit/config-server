@@ -1,0 +1,6 @@
+production:
+  api:
+    db_url: "production-app-db-url"
+staging:
+  api:
+    db_url: "staging-app-db-url"
