@@ -1,6 +1,6 @@
 # ConfigServer
 
-The simplest way to store YAML configuration and server it over HTTP
+The simplest way to store YAML configuration and serve it over HTTP
 
 ## Installation
 
@@ -48,7 +48,10 @@ ConfigServer.start("config.yml")
 
 and run `bundle exec ruby my_configuration_server.rb`
 
-You can now query the server:
+To get a value just chain the key path as your HTTP request path:
+`GET /production/nginx/server_name` to get the corresponding keys.
+
+## Some More Examples
 
 1. In the first example we get the production db host for the api service
 2. In the second example we ask for a non existing key and get a 404 response
