@@ -1,5 +1,6 @@
 require 'yaml'
 require 'logger'
+require 'json'
 
 class ConfigServer::App
 
@@ -26,7 +27,11 @@ class ConfigServer::App
   def get_key_from_yaml(path)
     keys = path.split("/").reject(&:empty?)
     val = keys.inject(@config, &:fetch)
-    val
+    if val.is_a?(Hash) || val.is_a?(Array)
+      val.to_json
+    else
+      val
+    end
   rescue
     nil
   end

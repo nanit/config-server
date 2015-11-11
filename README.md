@@ -1,8 +1,6 @@
 # ConfigServer
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/config_server`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The simplest way to store YAML configuration and server it over HTTP
 
 ## Installation
 
@@ -21,8 +19,38 @@ Or install it yourself as:
     $ gem install config_server
 
 ## Usage
+To run the server you must have a configuration file first:
+```yaml
+#config.yml
 
-TODO: Write usage instructions here
+production:
+  api:
+    db_host: prod.mydb.com
+    s3_bucket: some-bucket-prod
+  nginx:
+    server_name: www.me.prod
+
+staging:
+  api:
+    db_host: staging.mydb.com
+    s3_bucket: some-bucket-staging
+  nginx:
+    server_name: www.me.staging
+```
+Then create the following ruby file:
+```ruby
+#my_configuration_server.rb
+
+require 'config_server'
+
+ConfigServer.start("config.yml")
+```
+
+and run `bundle exec ruby my_configuration_server.rb`
+
+You can now query the server:
+
+
 
 ## Development
 

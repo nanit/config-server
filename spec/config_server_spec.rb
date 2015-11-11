@@ -2,6 +2,7 @@ require 'spec_helper'
 ENV['RACK_ENV'] = 'test'
 require 'rack/test'
 require 'yaml'
+require 'json'
 
 describe ConfigServer do
   include Rack::Test::Methods
@@ -31,6 +32,19 @@ describe ConfigServer do
         expect(last_response.body).to eq(YAML.load_file(CONFIG_FILE)['production']['api']['db_url'])
       end
 
+    end
+
+    context "key in the middle of chain" do
+
+      let(:request_path) { "/production/api" }
+
+      it "should return 200 ok" do
+        expect(last_response).to be_ok
+      end
+
+      it "should return a json repesentation of the key" do
+        expect(last_response.body).to eq(YAML.load_file(CONFIG_FILE)['production']['api'].to_json)
+      end
     end
 
     context "bad key" do
