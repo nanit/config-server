@@ -67,7 +67,9 @@ Then run:
 ## Querying The Server
 
 To get a value just chain the key path as your HTTP request path:
-`GET /production/nginx/server_name` to get the corresponding keys.
+
+`GET /production/nginx/server_name` to get the corresponding keys in your
+config.yml file.
 
 Some examples:
 
