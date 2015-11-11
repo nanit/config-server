@@ -60,7 +60,8 @@ require 'config_server'
 ConfigServer.start("config.yml")
 ```
 
-Then run 
+Then run:
+
     $ bundle exec ruby my_configuration_server.rb
 
 ## Querying The Server
