@@ -34,11 +34,11 @@ file and mount it into the container:
 
 ## Option 2: Running Directly On Your Machine
 
-### 1. Install config_server Gem
+1. Install config_server Gem
 
     $ gem install config_server
 
-### 2. Run The Server
+2. Run The Server
 
     $ CONFIG_FILE=/path/to/config.yml config_server
 
