@@ -42,6 +42,9 @@ file and mount it into the container:
 
     $ CONFIG_FILE=/path/to/config.yml config_server
 
+Note: You might need to run `$ eval "$(rbenv init -)"` in order to reload the
+config_server binary shim if you're using rbenv.
+
 ## Querying The Server
 
 To get a value just chain the key path as your HTTP request path:
