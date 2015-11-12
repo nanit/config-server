@@ -14,7 +14,7 @@ class ConfigServer::App
   def call(env)
     request_path = env['PATH_INFO']
     @logger.info "Got request for #{request_path}"
-    value = get_key_from_yaml(request_path)
+    value = (request_path == "/ping" && "PONG") || get_key_from_yaml(request_path)
     if value
       ['200', {'Content-Type' => 'text/plain'}, [value]]
     else

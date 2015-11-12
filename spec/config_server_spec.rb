@@ -60,6 +60,20 @@ describe ConfigServer do
       end
     end
 
+    context "ping do" do
+
+      let(:request_path) {"/ping"}
+      
+      it "should return 200 OK" do
+        expect(last_response).to be_ok
+      end
+
+      it "should return PONG" do
+        expect(last_response.body).to eq("PONG")
+      end
+
+    end
+
   end
 
 end
