@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    config_server (0.1.2)
+    config_server (0.1.3)
       rack
     rack (1.6.4)
 

@@ -36,23 +36,11 @@ file and mount it into the container:
 
 ### 1. Install config_server Gem
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'config_server'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install config_server
 
 ### 2. Run The Server
 
-    $ CONFIG_FILE=/path/to/config.yml bundle exec ruby lib/run.rb
+    $ CONFIG_FILE=/path/to/config.yml config_server
 
 ## Querying The Server
 
