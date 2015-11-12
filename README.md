@@ -32,7 +32,7 @@ file and mount it into the container:
 
     $ docker run -d -p 8080:8080 -v /path/to/your/config.yml:/usr/src/app/config.yml nanit/config_server
 
-## Option 2: Running Your Ruby Script
+## Option 2: Running Directly On Your Machine
 
 ### 1. Install config_server Gem
 
@@ -50,20 +50,9 @@ Or install it yourself as:
 
     $ gem install config_server
 
-### 2. Run Your Ruby Script
+### 2. Run The Server
 
-Then create the following ruby file:
-```ruby
-#my_configuration_server.rb
-
-require 'config_server'
-
-ConfigServer.start("config.yml")
-```
-
-Then run:
-
-    $ bundle exec ruby my_configuration_server.rb
+    $ CONFIG_FILE=/path/to/config.yml bundle exec ruby lib/run.rb
 
 ## Querying The Server
 

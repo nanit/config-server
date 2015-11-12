@@ -4,7 +4,9 @@ require "rack"
 require "rack/server"
 
 module ConfigServer
-  def self.start(config_file)
-    Rack::Server.start(:Host => "0.0.0.0", app: ConfigServer::App.new(config_file))
+  def self.start
+    port = ENV["SERVER_PORT"] || 8080
+    config_file = ENV["CONFIG_FILE"] || "config.yml"
+    Rack::Server.start(:Host => "0.0.0.0", :Port => port, :app => ConfigServer::App.new(config_file))
   end
 end
