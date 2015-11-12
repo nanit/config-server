@@ -1,6 +1,7 @@
 # ConfigServer
 
-The simplest way to store YAML configuration and serve it over HTTP
+The simplest way to serve configuration over HTTP.
+Currently support YAML files as configuration DB.
 
 ## Example config.yml
 
