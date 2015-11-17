@@ -1,7 +1,7 @@
+all: build push
+
 push:
 	docker push nanit/config_server
 
 build:
-	docker build nanit/config_server .
-
-all: build push
+	docker build -t nanit/config_server .
