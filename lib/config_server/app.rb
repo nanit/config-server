@@ -30,7 +30,7 @@ class ConfigServer::App
     if val.is_a?(Hash) || val.is_a?(Array)
       val.to_json
     else
-      val
+      val.to_s
     end
   rescue
     nil

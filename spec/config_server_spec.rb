@@ -34,6 +34,19 @@ describe ConfigServer do
 
     end
 
+    context "numerical values" do
+
+      let(:request_path) { "/production/api/replicas" }
+
+      it "should return 200 ok" do
+        expect(last_response).to be_ok
+      end
+
+      it "should return the right value" do
+        expect(last_response.body).to eq(YAML.load_file(CONFIG_FILE)['production']['api']['replicas'].to_s)
+      end
+    end
+
     context "key in the middle of chain" do
 
       let(:request_path) { "/production/api" }
