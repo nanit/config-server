@@ -34,16 +34,16 @@ file and mount it into the container:
 
 ## Option 2: Running Directly On Your Machine
 
-1. Install config_server Gem
+Install config_server Gem
 
     $ gem install config_server
 
-2. Run The Server
+*Note*: You might need to run `eval "$(rbenv init -)"` in order to reload the
+config_server binary shim if you're using rbenv.
+
+Run The Server
 
     $ CONFIG_FILE=/path/to/config.yml config_server
-
-Note: You might need to run `$ eval "$(rbenv init -)"` in order to reload the
-config_server binary shim if you're using rbenv.
 
 ## Querying The Server
 
