@@ -1,7 +1,6 @@
 require "config_server/version"
 require "config_server/app"
 require "rack"
-require "rack/server"
 
 module ConfigServer
   def self.start
