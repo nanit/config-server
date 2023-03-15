@@ -3,7 +3,7 @@ GEM
   specs:
     config_server (0.1.4)
       rack
-    rack (3.0.4.1)
+    rack (3.0.6.1)
 
 PLATFORMS
   ruby
